@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'binding_of_caller'
 gem 'pry-rails'
+gem 'jquery-rails'
 gem 'better_errors'
 gem 'annotate'
 gem 'faker'
@@ -48,6 +49,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rails_12factor'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
