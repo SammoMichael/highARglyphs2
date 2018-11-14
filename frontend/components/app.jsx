@@ -1,15 +1,27 @@
-import React form 'react';
-import { Provider } from 'react-redux';
-import { Hashrouter } from 'react-router-dom';
+import React from 'react';
+import {
+    Route,
+    Redirect,
+    Switch,
+    Link,
+    HashRouter
+ } from 'react-router-dom';
 
-import App from './app';
+ import SignUpFormContainer from './session_form/signup_form_container';
+import LoginFormContainer from './session_form/login_form_container';
 
-const root = ({ store }) => (
-    <Provider store={store}>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </Provider>
-)
+ const App = () => (
+     <div>
+         <header>
+             <h1>highARglyphs</h1>
+         </header>
+             <Link to="/login">Login</Link>
+             <Link to="/signup">Signup</Link>
+         <Switch>
+         <Route path="/login" component={LoginFormContainer} />
+         <Route path="/signup" component={SignUpFormContainer} />
+         </Switch>
+     </div>
+ );
 
-export default root;
+ export default App;

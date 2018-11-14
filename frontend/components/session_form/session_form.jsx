@@ -22,19 +22,7 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
      }
-
-    renderErrors() {
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                  <li key={`error-${i}`}>
-                    {error}
-                  </li>  
-                ))}
-            </ul>
-        );
-    }
-      
+  
     render() {
         return (
             <div className='login-form-container'>
@@ -42,7 +30,6 @@ class SessionForm extends React.Component {
                     Welcome to highARglyphs!
                     <br />
                     Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
                     <div className="login-form">
                     <label>Username
                         <input 
@@ -52,6 +39,13 @@ class SessionForm extends React.Component {
                          className="login-input"/>
                     </label>
                     <br/>
+                        <label>Password
+                        <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                className="login-input" />
+                        </label>
                     <input className="session-submit" type="submit" value={this.props.fromType} />
                     </div>
                 </form>
