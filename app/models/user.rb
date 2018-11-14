@@ -15,8 +15,8 @@ class User < ApplicationRecord
         foreign_key: :creator_id
     
     def self.find_by_credentials(username, password)
-        user = User.find_by_username(username)
-        user && User.is_password?(password) ? user : nil
+        user = User.find_by(username: username)
+        user && user.is_password?(password) ? user : nil
     end 
     
     def password=(password)
@@ -24,7 +24,7 @@ class User < ApplicationRecord
         self.password_digest = BCrypt::Password.create(password)
     end
 
-    def is_password(password)
+    def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end 
 
