@@ -1,10 +1,7 @@
-import { merge } from 'lodash';
-import { combinerReducers } from 'redux';
-import sessionReducer from './session_reducer';
+import { combineReducers } from 'redux';
 import usersReducer from './users_reducer';
 
-    export default combinerReducers({
-        session: sessionReducer,
+    export default combineReducers({
         users: usersReducer
     });
 
