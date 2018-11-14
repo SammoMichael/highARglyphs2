@@ -8,10 +8,10 @@
 //         case value:
 //         case value:
             
-    
-//         default:
-//             return state;
-//             break;
-//     }
+import { combineReducers } from 'redux';
 
-//     export default errorsReducer;
+import session from './session_errors_reducer';
+
+export default combineReducers({
+    session
+});

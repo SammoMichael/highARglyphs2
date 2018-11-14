@@ -22,6 +22,18 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
      }
+
+     renderErrors() {
+         return (
+             <ul>
+                 {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li> 
+                 ))}
+             </ul>
+         );
+     }
   
     render() {
         return (
@@ -36,9 +48,9 @@ class SessionForm extends React.Component {
                          type="text"
                          value={this.state.username}
                          onChange={this.update('username')}
-                         className="login-input"/>
+                         className="login-input" />
                     </label>
-                    <br/>
+                    <br />
                         <label>Password
                         <input
                                 type="password"
@@ -46,7 +58,8 @@ class SessionForm extends React.Component {
                                 onChange={this.update('password')}
                                 className="login-input" />
                         </label>
-                    <input className="session-submit" type="submit" value={this.props.fromType} />
+                        <input className="session-submit" type="submit" value={this.props.fromType} />
+                        <button onClick={this.props.loginDemoUser}>Demo User</button>
                     </div>
                 </form>
             </div>
