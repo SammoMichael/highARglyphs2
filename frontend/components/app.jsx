@@ -17,16 +17,17 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
             <nav className="header-nav">
              <Link to='/' className='header-link'>
              <h1 className="app-name">highARglyphs</h1>
+             <h1 className='icon-logo'><img src="./images/icon-logo.png" alt="" srcset=""/></h1>
              </Link>
-            </nav>
              <GreetingContainer />
-         </header>
          <div className='main-div'>
          <Switch>
          <AuthRoute exact path="/login" component={LoginFormContainer} />
          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
          </Switch>
          </div>
+            </nav>
+         </header>
      </div>
  );
 
