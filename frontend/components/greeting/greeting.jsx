@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
     const sessionLinks = () => (
-        <nav className="login-signup">
-            <Link to="/login">Login</Link>
-            &nbsp;or&nbsp;
-            <Link to="/signup">Sign Up!</Link>
-        </nav>
+        <div className="login-signup-container">
+            <nav className="login-signup">
+                <Link to="/login">Login</Link>
+                &nbsp;or&nbsp;
+                <Link to="/signup">Sign Up!</Link>
+            </nav>
+        </div>
     );
     const personalGreeting = () => (
         <hgroup className="header-group">
