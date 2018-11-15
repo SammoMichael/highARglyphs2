@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
      }
 
      handleDemoLogin(e) {
@@ -51,9 +51,11 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='login-form-box'>
                     Welcome to highARglyphs!
                     <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    Please {this.props.formType} {this.props.otherForm}
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
                     {this.renderErrors()}
                     <div className="login-form">
+                    <br />
                     <label>Username
                         <input 
                          type="text"
@@ -71,7 +73,10 @@ class SessionForm extends React.Component {
                             className="login-input" 
                         />
                         </label>
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <input 
+                        className="session-submit" 
+                        type="submit" 
+                        value={this.props.formType} />
                     </div>
                 </form>
                         <button onClick={this.props.loginDemoUser}>Demo User</button>

@@ -1,31 +1,44 @@
 body {
     background-image: image-url('splash-background.jpg');
+    height: 100vh;
 }
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.close-x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
 
 .header-nav {
 background-color:rgba(52,64,82,.9);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     
     right: 20%;
     width: 100%;
-    height: 60px;
     opacity: .7;
 }
 
 .icon-logo {
     position: relative;
-    height: 35px;
-    max-width: 35px;
-    max-height: 200px;
+    bottom: 50%;    
+    left: 1%;
+    width: 130px;
+    height:70px;
+    max-width: 130px;
+    max-height: 100px;
     background-image:image-url('icon-logo.png');
-    background-size: contain; 
 }
 .app-name {
     position: relative;
-    left: 9%;
-    top: 4%;
+    left: 15%;
+    top: 50%;
     height: 60px;
     font-size: 18px;
 font-family:Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -36,10 +49,8 @@ color: white;
     position: relative;
     flex-direction: column;
 
-    justify-content: space-between;
-display: -webkit-flex;
+    
 }
-
 
 .login-signup {
 font-size: 50px;
@@ -56,30 +67,27 @@ font-size: 30px;
 .login-form-box {
 
 font-size: 30px;
-
+height: 150px;
+display: flex;
+align-items: center;
 }
 
-.login-form {
-font-size: 30px;
-
-}
 
 .session-submit {
-font-size: 30px;
+    font-size: 30px;
 }
 
 
 .login-form-container {
-background-color: lightblue;
-font-family: 'Allerta Stencil', sans-serif;
-
+    background-color: lightblue;
+    font-family: 'Allerta Stencil', sans-serif;
 }
 
 
 .header-name {
     font-size: 50px;
-font-family: 'Allerta Stencil', sans-serif;
-background-color: red;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: red;
 }
 
 .header-button:hover {
@@ -87,12 +95,43 @@ background-color: red;
 }
 .header-button {
     font-size: 20px;
-font-family: 'Allerta Stencil', sans-serif;
-background-color: gray;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: gray;
 }
 
 .error-li {
-   font-size: 50px;
-font-family: 'Allerta Stencil', sans-serif;
-background-color: red; 
+    font-size: 20px;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: red; 
+}
+
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    background-color: orange;
+    position: relative;
+}
+
+.header-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-form {
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
 }
