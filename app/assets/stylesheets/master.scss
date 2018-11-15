@@ -1,5 +1,5 @@
 body {
-    background-image: url('splash-background.jpg');
+    background-image: image-url('splash-background.jpg');
 }
 
 .header-nav {
@@ -19,8 +19,8 @@ background-color:rgba(52,64,82,.9);
     height: 35px;
     max-width: 35px;
     max-height: 200px;
-    background-image:url('icon-logo.png');
-
+    background-image:image-url('icon-logo.png');
+    background-size: contain; 
 }
 .app-name {
     position: relative;
