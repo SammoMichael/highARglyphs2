@@ -27,6 +27,7 @@ class SessionForm extends React.Component {
      handleDemoLogin(e) {
          e.preventDefault();
          this.props.loginDemoUser();
+         this.props.closeModal();
      }
 
     renderErrors() {
@@ -44,42 +45,42 @@ class SessionForm extends React.Component {
         );
     }
 
-  
     render() {
         return (
             <div className='login-form-container'>
                 <form onSubmit={this.handleSubmit} className='login-form-box'>
-                    Welcome to highARglyphs!
                     <br />
-                    Please {this.props.formType} {this.props.otherForm}
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                    {this.props.formType} {this.props.otherForm}
+                    <div onClick={this.props.closeModal} className="close-x" img src="bsc-icon.png">  </div>
                     {this.renderErrors()}
                     <div className="login-form">
                     <br />
-                    <label>Username
+                    <label>
                         <input 
                          type="text"
                          value={this.state.username}
                          onChange={this.update('username')}
-                         className="login-input" 
+                         className="login-input-username" 
                         />
                     </label>
                     <br />
-                        <label>Password
+                        <label>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            className="login-input" 
+                            className="login-input-password" 
                         />
                         </label>
                         <input 
-                        className="session-submit" 
+                        className="session-submit-login" 
                         type="submit" 
                         value={this.props.formType} />
                     </div>
                 </form>
-                        <button onClick={this.props.loginDemoUser}>Demo User</button>
+                        <button 
+                        className="demo-button" 
+                        onClick={this.handleDemoLogin}>Demo User</button>
             </div>
         );
     }
