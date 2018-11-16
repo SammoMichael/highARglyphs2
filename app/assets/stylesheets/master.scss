@@ -1,0 +1,195 @@
+body {
+    background-image: image-url('main.jpg');
+    height: 100vh;
+    width: 100%;
+    height: 100%;
+      display: grid;
+             max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.close-x {
+    position: absolute;
+    background-image: image-url('bsc-blue-x-icon.png');
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+
+.header-nav {
+background-color:rgba(52,64,82,.9);
+    display: flex;
+    height: 60px;
+    right: 20%;
+    width: 100%;
+    opacity: .7;
+}
+
+.icon-logo {
+    position: relative;
+    bottom: 50%;    
+    left: 1%;
+    width: 130px;
+    height:70px;
+    max-width: 130px;
+    max-height: 100px;
+    background-image:image-url('icon-logo.png');
+}
+.app-name {
+    left: 15%;
+    top: 50%;
+    height: 60px;
+    font-size: 18px;
+font-family:Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+color: white;
+}
+.login-input-password {
+    background: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 45 px;
+    transition: all 1s;
+    font-family: Proxima Nova Light,sans-serif;
+    color: #555; 
+}
+.login-input-username {
+    background: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 45 px;
+    transition: all 1s;
+    font-family: Proxima Nova Light,sans-serif;
+    color: #555; 
+
+}
+
+.login-signup-container {
+position: absolute;
+right: 2%;
+top: inherit;
+
+}
+
+.login-signup {
+font-size: 50px;
+
+}
+
+.login-input {
+    justify-content: right;
+align-content: right;
+font-size: 30px;
+}
+.login-form-box {
+
+font-size: 30px;
+height: 300px;
+width: 300px;
+display: flex;
+align-items: center;
+}
+
+.session-submit-login {
+    background-color: #29a5dc;
+    color: white;
+    font-family: Proxima Nova Light,sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    transition: all .3s;
+}
+.session-submit {
+    font-size: 30px;
+}
+.login-button:hover {
+    color: #29a5dc;
+}
+.login-button {
+    background-color: transparent;
+    border-style: none;
+    font-size: 13px;
+   color: #cde;
+}
+.register-button:hover {
+    color: #29a5dc;
+}
+
+.register-button {
+    background-color: transparent;
+    border-style: none;
+    font-size: 13px;
+    color: #ff8a47;
+}
+.login-form-container {
+    min-width: 300px;
+    max-height: 80vh;
+    max-width: 700px;
+    font-size: 14px;
+    background-color: #fff;
+    font-family: Proxima Nova Light,sans-serif;
+}
+
+
+.header-name {
+    font-size: 50px;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: red;
+}
+
+.header-button:hover {
+    color: aquamarine;
+}
+.header-button {
+    font-size: 20px;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: gray;
+}
+
+.error-li {
+    font-size: 20px;
+    font-family: 'Allerta Stencil', sans-serif;
+    background-color: red; 
+}
+
+.modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    background-color: orange;
+    position: relative;
+}
+
+.header-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-form {
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
