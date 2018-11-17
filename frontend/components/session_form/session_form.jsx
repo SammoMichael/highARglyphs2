@@ -50,10 +50,10 @@ class SessionForm extends React.Component {
             <div className='login-form-container'>
                 <form onSubmit={this.handleSubmit} className='login-form-box'>
                     <br />
-                    {this.props.formType} {this.props.otherForm}
-                    <div onClick={this.props.closeModal} className="close-x" img src="bsc-icon.png">  </div>
-                    {this.renderErrors()}
-                    <div className="login-form">
+                        <span className="form-type-name">{this.props.formType}</span>
+                        <i onClick={this.props.closeModal} className="close-x" ></i>
+                        {this.renderErrors()}
+                        <div className="login-form">
                     <br />
                     <label>
                         <input 
@@ -77,10 +77,10 @@ class SessionForm extends React.Component {
                         type="submit" 
                         value={this.props.formType} />
                     </div>
-                </form>
                         <button 
                         className="demo-button" 
                         onClick={this.handleDemoLogin}>Demo User</button>
+                </form>
             </div>
         );
     }

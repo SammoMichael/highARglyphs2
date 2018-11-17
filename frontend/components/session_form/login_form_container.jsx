@@ -8,7 +8,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
+        formType: 'Login',
         navLink: <Link to="/signup">sign up instead</Link>,
     };
 };
@@ -18,7 +18,9 @@ const mapDispatchToProps = dispatch => {
         loginDemoUser: () => dispatch(loginDemoUser()),
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
+            <button 
+            className="session-submit-register" 
+            onClick={() => dispatch(openModal('signup'))}>
                 Register
             </button>
         ),
