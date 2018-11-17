@@ -21,7 +21,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
             <nav className="header-nav">
              <Link to='/' className='header-link'>
                 <nav className='BrandingNav'>
+            <div className="icon-logo-box">
              <h1 className='icon-logo'>""</h1>
+                   </div>
              <h1 className="app-name">highARglyphs</h1>
                 </nav>
              </Link>

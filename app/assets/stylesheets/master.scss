@@ -12,7 +12,11 @@ body {
             background-size: cover;
             background-repeat: no-repeat;
 }
-
+    
+.BrandingNav {
+    display: flex;
+    flex-direction: inherit;
+}
 #root {
     width: 100%;
     height: 100%;
@@ -37,7 +41,6 @@ background-color:rgba(52,64,82,.9);
 }
 
 .icon-logo {
-    position: relative;
     bottom: 50%;    
     left: 1%;
     width: 130px;
@@ -47,6 +50,7 @@ background-color:rgba(52,64,82,.9);
     background-image:image-url('icon-logo.png');
 }
 .app-name {
+    margin: 20px;
     left: 15%;
     top: 50%;
     height: 60px;
