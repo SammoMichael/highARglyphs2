@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_CARDS, RECEIVE_CARD, REMOVE_CARD } from '../actions/card_actions';
 
-const cardsReducer = (state, action) => {
+const cardsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch (action.type) {
