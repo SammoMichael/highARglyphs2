@@ -36,7 +36,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
          </div>
             </nav>
          </header>
-     </div>
+       <h1 className="slide-title">The World's Smartest Flashcards</h1>
+      <h2 className="blurb-heading">Learn Twice as fast, and remember longer.
+         Proven by decades of cognitive science.</h2>
+  </div>
  );
 
  export default App;
