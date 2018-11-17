@@ -1,10 +1,33 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  username        :string           not null
+#  session_token   :string           not null
+#  password_digest :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  image_url       :string
+#
+
+
+
 class User < ApplicationRecord 
-
+    
     attr_reader :password
-
+    
     validates :username, :password_digest, :session_token, presence: true
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
+    
+    has_many :decks,
+    foreign_key: :creator_id,
+    class_name: :Deck
+    
+    has_many :cards,
+    through: :decks,
+    source: :cards
 
     after_initialize :ensure_session_token
 
