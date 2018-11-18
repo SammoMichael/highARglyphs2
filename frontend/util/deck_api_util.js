@@ -1,16 +1,16 @@
-export const fetchDecks = () => dispatch => {
+export const fetchDecks = () => {
   return $.ajax({
     method: 'GET',
     url: 'api/decks',
     });
 };
-export const fetchDeck = (deckId) => dispatch => {
+export const fetchDeck = (deckId) => {
   return $.ajax({
     method: 'GET',
     url: `api/decks/${deckId}`,
     });
 };
-export const createDeck = (deck) => dispatch => {
+export const createDeck = (deck) => {
   return $.ajax({
     method: 'POST',
     url: 'api/decks',
@@ -18,10 +18,9 @@ export const createDeck = (deck) => dispatch => {
     });
 };
 
-export const deleteDeck = (deckId) => dispatch => {
+export const deleteDeck = (deckId) => {
   return $.ajax({
     method: 'DELETE',
-      url: `api/decks/${deckId}`,
+      url: `/api/decks/${deckId}`,
     });
 };
-

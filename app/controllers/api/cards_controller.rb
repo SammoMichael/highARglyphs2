@@ -1,9 +1,8 @@
 class Api::CardsController < ApplicationController 
-    before_action :require_logged_in
+    # before_action :require_logged_in
     
     def index 
-
-        @cards = Card.all.select(|card| card.deck_id = params[:deck_id])
+        @cards = Card.all.select(|card| card.deck_id == params[:deck_id])
     end 
 
     def create
@@ -53,6 +52,5 @@ class Api::CardsController < ApplicationController
 
     def card_params
         card_params.require(:card).permit(:front, :back)
-    end
-    
+    end   
 end 

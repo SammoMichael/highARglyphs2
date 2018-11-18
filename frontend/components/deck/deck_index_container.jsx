@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import DeckIndex from './deck_index';
-import { fetchAllDecks } from '../../actions/deck_actions';
+import { fetchDecks, fetchDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = state => {
-    const decks = Object.values(state.decks);
-    return decks;
+    return {
+    decks: Object.values(state.entities.decks)
+    };
 };
 
-const mapDispatchToProps = dispatch => {
-    return ({
-        fetchAllDecks: () => dispatch(fetchAllDecks())
-    });
-};
+const mapDispatchToProps = dispatch => ({
+        fetchDecks: () => dispatch(fetchDecks()),
+        fetchDeck: deckId => dispatch(fetchDeck(deckId))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckIndex);

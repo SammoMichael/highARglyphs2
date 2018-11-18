@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createDeck } from '../../actions/deck_actions';
-import deckForm from './deck_form';
+// import deckForm from './deck_form';
 
 const mapStateToProps = state => {
     const title = '';

@@ -1,12 +1,13 @@
 import * as DeckAPIUtil from '../util/deck_api_util';
 
-export const RECEIVE_ALL_DECKS = 'RECEIVE_ALL_DECKS';
+export const RECEIVE_DECKS = 'RECEIVE_DECKS';
 export const RECEIVE_DECK = 'RECEIVE_DECK';
 export const REMOVE_DECK = 'REMOVE_DECK';
 
-export const fetchAllDecks = () => dispatch => {
-    return DeckAPIUtil.fetchDecks()
-    .then(decks => dispatch({ type: RECEIVE_ALL_DECKS, decks }));
+export const fetchDecks = () => dispatch => {
+    return DeckAPIUtil.fetchDecks().then(
+        decks => dispatch({ type: RECEIVE_DECKS, decks }
+    ));
 };
 
 export const fetchDeck = deckId => dispatch => {
@@ -14,8 +15,7 @@ export const fetchDeck = deckId => dispatch => {
     .then(deck => dispatch({ type: RECEIVE_DECK, deck }));
 };
 
-export const deleteDeck = deckId => dispach => {
+export const deleteDeck = deckId => dispatch => {
     return DeckAPIUtil.deleteDeck(deckId)
-    .then(deckId => dispach({ type: REMOVE_DECK, deckId }));
+    .then(deckId => dispatch({ type: REMOVE_DECK, deckId }));
 };
-

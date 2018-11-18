@@ -1,18 +1,22 @@
 import React from 'react';
 import {
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    HashRouter
- } from 'react-router-dom';
+   Route,
+   Redirect,
+   Switch,
+   Link,
+   HashRouter
+} from 'react-router-dom';
+
 import Modal from './modal/modal';
+import DeckIndexContainer from './deck/deck_index_container.jsx';
 import GreetingContainer from './greeting/greeting_container';
  import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
  const App = () => (
+    
+    // test
      <div >
          <div>
             <Modal />
@@ -39,6 +43,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
        <h1 className="slide-title">The World's Smartest Flashcards</h1>
       <h2 className="blurb-heading">Learn Twice as fast, and remember longer.
          Proven by decades of cognitive science.</h2>
+         <DeckIndexContainer />
   </div>
  );
 

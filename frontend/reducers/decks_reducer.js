@@ -1,14 +1,14 @@
 import merge from 'lodash/merge';
-import { RECEIVE_ALL_DECKS, RECEIVE_DECK, REMOVE_DECK } from '../actions/deck_actions';
+import { RECEIVE_DECKS, RECEIVE_DECK, REMOVE_DECK } from '../actions/deck_actions';
 
 const decksReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch (action.type) {
-        case RECEIVE_ALL_DECKS:
+        case RECEIVE_DECKS:
             return merge({}, state, action.decks);
         case RECEIVE_DECK:
-            return merge({}, { [state.action.deck.id]: state.action.deck });
+            return merge({}, { [action.deck.id]: action.deck });
         case REMOVE_DECK:
             newState = merge({}, state);
             delete newState[action.deckId];
