@@ -16,3 +16,11 @@
     Deck.create({ title: 'Art', creator_id: 6})
     Deck.create({ title: 'Massage', creator_id: 8})
     
+    Card.create({ deck_id: 1,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 2,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 3,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 4,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 5,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 6,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 7,front: 'Q', back: 'A'})
+    Card.create({ deck_id: 8,front: 'Q', back: 'A'})
