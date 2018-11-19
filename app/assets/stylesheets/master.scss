@@ -1,18 +1,10 @@
-html, body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: 0;
-    padding: 0;
+#root {
+    width: 100vw;
+    height: 100vh;
 }
-.background {
-
-}
-html, section {
-    width: -webkit-fill-available;
+#splash {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: image-url('main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,10 +12,6 @@ html, section {
 .BrandingNav {
     display: flex;
     flex-direction: inherit;
-}
-#root {
-    width: 100%;
-    height: 100%;
 }
 .close-x::before {
     content: image-url('bsc-blue-x-icon.png');
