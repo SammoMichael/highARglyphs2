@@ -9,15 +9,23 @@ class DeckIndex extends React.Component {
 
     render() {
         const decks = this.props.decks.map((deck) => (
-            <DeckIndexItem
+          <DeckIndexItem
                 key={deck.id}
                 deck={deck} />
             ));
         
         return (
-            <ul>
-            { decks }
+          <div>  
+            <ul className="deck-index-item">
+                { decks }
             </ul>
+            <nav className="create-deck-button">
+                <button className="create-button" 
+                onClick={() => this.props.openModal('create')}>
+                Create Deck
+                </button>
+            </nav>
+          </div>
         );
     }
 }

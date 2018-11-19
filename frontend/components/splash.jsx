@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import Modal from './modal/modal';
-import openModal from '../actions/modal_actions';
+import { openModal } from '../actions/modal_actions';
 
 const Splash = ({ loggedIn }) => {
     if (!loggedIn) {
         return (
-            <body id="splash" className="slide header slide-1">
+            <div id="splash" className="slide header slide-1">
             <div className='main-div'>
             <div>
                 <div className="splash-headers">
@@ -18,7 +18,7 @@ const Splash = ({ loggedIn }) => {
                 </div>
             </div>
             </div>
-        </body>
+        </div>
         );
     } 
     return (

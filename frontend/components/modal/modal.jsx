@@ -3,6 +3,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
+import DeckFormContainer from '../deck/deck_form_container';
 
 function Modal({modal, closeModal }) {
     if (!modal) {
@@ -10,6 +11,9 @@ function Modal({modal, closeModal }) {
     }
     let component;
     switch (modal) {
+        case 'create':
+            component = <DeckFormContainer />;
+            break;
         case 'login':
             component = <LoginFormContainer />; 
             break;
