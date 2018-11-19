@@ -15,9 +15,9 @@ export const fetchDeck = deckId => dispatch => {
     .then(deck => dispatch({ type: RECEIVE_DECK, deck }));
 };
 
-export const createDeck = deckId =>dispatch => {
+export const createDeck = deck => dispatch => {
     return DeckAPIUtil.createDeck(deck)
-    .then(deck => dispatch({ type: RECEIVE_DECK, deck }));
+    .then(({deck}) => dispatch({ type: RECEIVE_DECK, deck }));
 };
 
 export const deleteDeck = deckId => dispatch => {

@@ -4,10 +4,8 @@ import { withRouter } from 'react-router-dom';
 class DeckCreateForm extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {
-        username: '',
-        password: ''
-    };
+    this.state = { title: '' };
+        
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 
@@ -18,7 +16,7 @@ class DeckCreateForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefaut();
+        e.preventDefault();
         this.props.createDeck(this.state).then(this.props.closeModal);
     }
 
