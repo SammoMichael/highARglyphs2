@@ -64,7 +64,7 @@ background-color:rgba(52,64,82,.9);
     margin: 0;
     text-align: left;
     position: absolute;
-    top: 55%;
+    top: 400px;
     width: 500px;
     left: 50px;
 }
@@ -277,9 +277,12 @@ background-color: #29a5dc;
 
 
 .header-name {
-    font-size: 50px;
+    font-size: 20px;
     font-family: 'Allerta Stencil', sans-serif;
     background-color: red;
+    position: relative;
+    left: 900px;
+
 }
 
 .header-button:hover {
@@ -289,6 +292,8 @@ background-color: #29a5dc;
     font-size: 20px;
     font-family: 'Allerta Stencil', sans-serif;
     background-color: gray;
+    position: relative;
+    left: 900px;
 }
 
 .error-li {
@@ -300,7 +305,7 @@ background-color: #29a5dc;
     font-family: Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 14px;
     position: relative;
-    bottom: 350px;
+    bottom: 500px;
     min-width: 1200px;
     min-height: 50px;
     right: 550px;

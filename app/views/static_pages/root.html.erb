@@ -4,4 +4,81 @@
             user: current_user).html_safe %>
     </script>
     <% end %>
+    <%# <!doctype HTML>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- First, include whichever version of A-Frame you like. -->
+<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+<!-- Next, include three.ar.js; add the speech recognition polyfill if you want. -->
+<script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+<!-- Last, include aframe-ar. -->
+<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
+
+<!-- Place the ar component on your scene, and the camera will use AR by default. -->
+<a-scene ar>
+  <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
+<a-scene>  
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+		<a-marker-camera preset="hiro">
+	<a-scene arjs="debugUIEnabled: false;"embedded arjs="sourceType: webcam;">
+			<a-box position='0 0.5 0' material="opacity: 0.5;"></a-box>
+		</a-marker-camera>
+	</a-scene>
+</body>
+
+</html> %>
+<%# <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs='sourceType: webcam;'>
+    <!-- handle marker with your own pattern -->
+    <a-marker type='pattern' url='path/to/pattern-marker.patt'>
+      <a-box position='0 0.5 0' material='color: red;'></a-box>
+    </a-marker>
+
+    <!-- handle marker with hiro preset -->
+    <a-marker preset='hiro'>
+      <a-box position='0 0.5 0' material='color: green;'></a-box>
+    </a-marker>
+
+    <!-- handle barcode marker -->
+    <a-marker type='barcode' value='5'>
+      <a-box position='0 0.5 0' material='color: blue;'></a-box>
+    </a-marker>
+
+    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body> %>
+<%# <!doctype HTML>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
+
+<body style="margin : 0px; overflow: hidden;">
+	<a-scene embedded arjs="sourceType: webcam;">
+		<a-marker-camera preset="hiro">
+			<a-text value="Hello, World!"></a-text>
+            <a-box position='0 0.5 0' material="opacity: 0.5;"></a-box>
+		</a-marker-camera>
+	</a-scene> %>
+</body>
+
+</html>
 <main id="root"></main> 

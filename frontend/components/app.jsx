@@ -10,8 +10,6 @@ import {
 import Modal from './modal/modal';
 import DeckIndexContainer from './deck/deck_index_container.jsx';
 import GreetingContainer from './greeting/greeting_container';
- import SignUpFormContainer from './session_form/signup_form_container';
-import LoginFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
  const App = () => (
@@ -23,7 +21,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
          </div>
          <header>
             <nav className="header-nav">
-             <Link to='/' className='header-link'>
+             <Link to='/decks' className='header-link'>
                 <nav className='BrandingNav'>
             <div className="icon-logo-box">
              <h1 className='icon-logo'>""</h1>
@@ -34,16 +32,16 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
              <GreetingContainer />
          <div className='main-div'>
          <Switch>
-         <AuthRoute exact path="/login" component={LoginFormContainer} />
-         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+         <Route path="/decks" component={DeckIndexContainer} />
          </Switch>
          </div>
             </nav>
          </header>
+         <div className="splash-headers">
        <h1 className="slide-title">The World's Smartest Flashcards</h1>
       <h2 className="blurb-heading">Learn Twice as fast, and remember longer.
          Proven by decades of cognitive science.</h2>
-         <DeckIndexContainer />
+       </div>
   </div>
  );
 

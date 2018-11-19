@@ -52,7 +52,6 @@ class SessionForm extends React.Component {
                     <br />
                         <span className="form-type-name">{this.props.formType}</span>
                         <i onClick={this.props.closeModal} className="close-x" ></i>
-                        {this.renderErrors()}
                         <div className="login-form">
                     <br />
                     <label>
@@ -79,8 +78,9 @@ class SessionForm extends React.Component {
                     </div>
                         <button 
                         className="demo-button" 
-                        onClick={this.handleDemoLogin}>Demo User</button>
+                        onClick={this.handleDemoLogin}>Demo User</button>                     
                 </form>
+                {this.renderErrors()}
             </div>
         );
     }
