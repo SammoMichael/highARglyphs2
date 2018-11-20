@@ -2,7 +2,7 @@ class Api::CardsController < ApplicationController
     # before_action :require_logged_in
     
     def index 
-        @cards = Card.all.select(|card| card.deck_id == params[:deck_id])
+        @cards = Card.all.select{|card| card.deck_id == params[:deck_id]}
     end 
 
     def create
@@ -15,7 +15,7 @@ class Api::CardsController < ApplicationController
                 render json: @card.errors.full_messages, status: 422 
             end 
         else  
-            render json: ['please choose a deck you own'], status : 401
+            render json: ['please choose a deck you own'], status: 401
         end 
     end
 
