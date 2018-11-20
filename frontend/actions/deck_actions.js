@@ -12,15 +12,22 @@ export const fetchDecks = () => dispatch => {
 
 export const fetchDeck = deckId => dispatch => {
     return DeckAPIUtil.fetchDeck(deckId)
-    .then(deck => dispatch({ type: RECEIVE_DECK, deck }));
+    .then(payload => dispatch(receiveDeck(payload)));
 };
 
 export const createDeck = deck => dispatch => {
     return DeckAPIUtil.createDeck(deck)
-    .then(({deck}) => dispatch({ type: RECEIVE_DECK, deck }));
+    .then(payload => dispatch(receiveDeck(payload)));
 };
 
 export const deleteDeck = deckId => dispatch => {
     return DeckAPIUtil.deleteDeck(deckId)
     .then(deckId => dispatch({ type: REMOVE_DECK, deckId }));
+};
+
+const receiveDeck = ({ deck }) => {
+    return ({
+        type: RECEIVE_DECK,
+        deck,
+    });
 };

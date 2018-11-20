@@ -18,6 +18,7 @@ class Deck < ApplicationRecord
         foreign_key: :creator_id,
         class_name: :User
 
-    has_many :cards
-
+    has_many :cards,
+        foreign_key: :deck_id,
+        class_name: :Card
 end 
