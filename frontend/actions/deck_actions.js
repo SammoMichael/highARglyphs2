@@ -22,7 +22,7 @@ export const createDeck = deck => dispatch => {
 
 export const deleteDeck = deckId => dispatch => {
     return DeckAPIUtil.deleteDeck(deckId)
-    .then(deckId => dispatch({ type: REMOVE_DECK, deckId }));
+    .then(deck => dispatch({ type: REMOVE_DECK, deckId }));
 };
 
 const receiveDeck = ({ deck }) => {

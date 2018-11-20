@@ -34,7 +34,7 @@ class DeckCreateForm extends React.Component {
                      type="text"
                      value={this.state.title}
                      onChange={this.update('title')}
-                     className="create=input-title"/>
+                     className="create-input-title"/>
                 </label>
                 </div>
                 </form>

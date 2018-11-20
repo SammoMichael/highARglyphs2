@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DeckShow from './deck_show';
-import { fetchDeck } from '../../actions/deck_actions';
+import { fetchDeck, deleteDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const deck = state.entities.decks[ownProps.match.params.deckId] || {};
@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchDeck: deckId => dispatch(fetchDeck(deckId))
+        fetchDeck: deckId => dispatch(fetchDeck(deckId)),
+        deleteDeck: deckId => dispatch(deleteDeck(deckId))
     });
 };
 

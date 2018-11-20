@@ -13,12 +13,20 @@ class DeckShow extends React.Component {
 
     render() {
         const { deck } = this.props;
-        console.log({ deck })
         return (
             <section className="deck-detail">
-                <li>
-                    {deck.title}
-                </li>
+                <ul>
+                    <li className="deck-title">{deck.title}</li>
+                    <div className="deck-controls">
+                        <button className='study-button'>Study</button>
+                        <button className='edit-button'>Edit Cards</button>
+                        <button 
+                        className='delete-button' 
+                        onClick={() => this.props.deleteDeck(this.props.deck.id)
+                        .then(this.props.history.push('/decks'))}
+                        >Delete</button>
+                    </div>
+                </ul>
             </section>
         );
     }

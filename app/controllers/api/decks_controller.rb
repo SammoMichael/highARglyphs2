@@ -28,17 +28,16 @@ class Api::DecksController < ApplicationController
 
   def destroy
     @deck = Deck.find(params[:id])
-    if @deck
-      if @deck.creator_id == current_user.id 
+    # if @deck
+    #   if @deck.creator_id == current_user.id 
         @deck.destroy
         render :show
-      else
-        render json: ["Can't destroy unowned decks"], status: 401
-      end
-    else
-      render json: ['Deck not found'], status: 404
-    end
-
+    #   else
+    #     render json: ["Can't destroy unowned decks"], status: 401
+    #   end
+    # else
+    #   render json: ['Deck not found'], status: 404
+  # end
   end
 
   private

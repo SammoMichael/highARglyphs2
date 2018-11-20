@@ -86,10 +86,11 @@
 
 </html> %>
 
-<textarea id="textarea" rows=10 cols=80></textarea>
+<textarea value="" id="textarea" rows=10 cols=80></textarea>
 <button id="button" onclick="toggleStartStop()"></button>
 
-<script type="text/javascript">
+    <script if="bootstrap-transcript" type="text/javascript">
+
 var recognizing;
 var recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
@@ -102,6 +103,8 @@ recognition.onresult = function (event) {
       textarea.value += event.results[i][0].transcript;
       const transcript = event.results[i][0].transcript;
       console.log(transcript);
+      window.transcript = transcript;
+      window.textarea.value = textarea.value;
     }
   }
 }
@@ -121,7 +124,8 @@ function toggleStartStop() {
     button.innerHTML = "Click to Stop";
   }
 }
-</script>
+    </script>
+
 
 <main id="root">
 
