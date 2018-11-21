@@ -1,0 +1,65 @@
+import React from 'react';
+
+class Study extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            value: '',
+            flipped: false
+            currIdx: 0
+        };  
+            this.handleClick = this.handleClick.bind(this);
+            // this.handleKeydown = this.handleKeydown.bind(this);      
+    }   
+    
+    
+    componentDidMount() {
+        const { fetchDeck, deckId } = this.props;
+        fetchDeck(deckId);
+        this.props.fetchCards(this.props.match.params.deckId);
+        document.addEventListener('keydown', this.handleKeydown);
+        const fronts = Object.values(this.props.cards.map((card) => card.front));
+        const backs = Object.values(this.props.cards.map((card) => card.back));       
+        this.setState({ value: fronts[0] });
+        }
+    }
+
+    componentDidUpdate() {
+
+    }
+
+    handleClick() {
+        return this.state.flipped ?
+         this.setState({ flipped: false }) :
+          this.setState({ flipped: true }); 
+    }
+
+    render() {
+        debugger
+        return (
+            <ul>
+                <h1>Study</h1>
+                <li onClick={this.handleClick}>{this.state.value}</li>
+                {null}
+            </ul>
+        );
+    }
+}
+// handleKeydown (e) {
+//     const {deck} = this.props;
+//     if (e.keycode === 37) {
+//         toggle(cardFace)
+//     }
+//     if (e.keycode === 39) {
+//         toggle(cardFace)
+//     }
+//     if (e.keycode === 38) {
+//         this.props.history.push(`/study/${cardId - 1}`)
+//     }
+//     if (e.keycode === 40) {
+//         this.props.history.push(`/study/${cardId + 1}`)
+//     }
+// }
+
+export default Study; 
+

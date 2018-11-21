@@ -23,6 +23,7 @@ class DeckCreateForm extends React.Component {
     render() {
         return (
             <div className='deck-create-form'>
+                <h1 className='create-deck-header'>Create Deck</h1>
                 <form onSubmit={this.handleSubmit} className='deck-create-box'>
                 <br />
                 <span className='form-type-name'>{this.props.formType}</span>

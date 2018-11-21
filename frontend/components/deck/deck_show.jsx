@@ -15,7 +15,7 @@ class DeckShow extends React.Component {
         const { deck } = this.props;
         return (
             <section className="deck-detail">
-                <ul>
+                <ul className='deck-detail-box'>
                     <li className="deck-title">{deck.title}</li>
                     <div className="deck-controls">
                         <button className='study-button'>Study</button>

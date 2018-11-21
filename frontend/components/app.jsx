@@ -13,6 +13,7 @@ import Modal from './modal/modal';
 import DeckIndexContainer from './deck/deck_index_container.jsx';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DeckShowContainer from './deck/deck_show_container';
+import StudyContainer from './study/study_container';
 
  const App = () => (
    <div >
@@ -32,6 +33,7 @@ import DeckShowContainer from './deck/deck_show_container';
             </Link>                   
          </nav>  
       </header>  
+               <ProtectedRoute path="/study/:deckId" component={StudyContainer} />
                <ProtectedRoute path="/decks" component={DeckIndexContainer} />
                <ProtectedRoute path="/decks/:deckId" component={DeckShowContainer} />
                <Route exact path="/" component={Splash} />

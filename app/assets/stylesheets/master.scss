@@ -153,6 +153,7 @@ hr {
     bottom: 50px;
 }
 .modal-background {
+    z-index: 10;
 
     background-color: rgba(0,0,0,0.6);
 }
@@ -286,12 +287,13 @@ background-color: #29a5dc;
 
 
 .header-name {
+    color: #cde;
     font-size: 20px;
     font-family: 'Allerta Stencil', sans-serif;
-    background-color: red;
-    position: absolute;
-    right: 8%;
-    top: 15%;
+    position: relative;
+    top: -32%;
+    left: 390%;
+    text-decoration: none;
 
 }
 
@@ -303,7 +305,7 @@ background-color: #29a5dc;
     font-family: 'Allerta Stencil', sans-serif;
     background-color: gray;
     position: relative;
-    left: 900px;
+    left: 865px;
     bottom: 65px;
 }
 

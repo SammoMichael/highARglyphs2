@@ -49,6 +49,13 @@
     top: 30%;
     text-decoration: none;
     font-size: 30px;
+    width: 300px;
+    height: 300px;
+}
+
+.deck-detail-box {
+    height: 300px;
+    width: 300px;
 }
 
 .study-button {
@@ -83,7 +90,6 @@ background-color: #29a5dc;
     border-radius: 2px;
     padding: 10px 20px;
     top: 50px;
-    right: -20px;
 }
 .create-button {
     background-color: #29a5dc;
@@ -112,23 +118,27 @@ background-color: #29a5dc;
     border-radius: 2px;
     padding: 10px 20px;
     top: 100px;
-    right: 100px;
-    z-index: 10;
 }
 
 .deck-controls {
+    justify-content: center;
     width: 500px;
     height: 300px;
     display: flex;
     flex-direction: row-reverse;
-    z-index: -10;
     position: relative;
-    top: 40px;
-    right: 80%;
+    top: 30%;
+    right: 30%;
+}
+
+.create-deck-header {
+    position: absolute;
+    font-size: 25px;
 }
 
 .deck-create-box {
-    background-color: black;
+    content: "Create Deck";
+    background-color: white;
     height: -webkit-fill-available;
     width: 180px;
     height: -webkit-fill-available;
@@ -144,4 +154,11 @@ background-color: #29a5dc;
     width: 30px;
     background-image: image-url('thumb.png');
     content: image-url('thumb.png');
+}
+
+.close-x {
+    color: white;
+}
+.close-x::before {
+    content: image-url('bsc-blue-x-icon.png');
 }

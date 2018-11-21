@@ -1,7 +1,7 @@
 export const fetchCards = (deckId) => {
     return $.ajax({
         method: 'GET',
-        url: `api/${deckId}/cards`,
+        url: `api/decks/${deckId}/cards`,
     });
 };
 
@@ -15,7 +15,7 @@ export const fetchCard = cardId => {
 export const createCard = card => {
     return $.ajax({
         method: 'POST',
-        url: `api/${card.deck}/cards`,
+        url: `api/decks/${card.deck}/cards`,
         data: { card },
     });
 };
