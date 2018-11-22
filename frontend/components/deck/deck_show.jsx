@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class DeckShow extends React.Component {
     componentDidMount() {
@@ -18,8 +19,8 @@ class DeckShow extends React.Component {
                 <ul className='deck-detail-box'>
                     <li className="deck-title">{deck.title}</li>
                     <div className="deck-controls">
-                        <button className='study-button'>Study</button>
-                        <button className='edit-button'>Edit Cards</button>
+                        <Link to={`/study/${deck.id}`} className='study-button'>Study</Link>
+                        <Link to={`/cards/${deck.id}`} className='edit-button'>Edit Cards</Link>
                         <button 
                         className='delete-button' 
                         onClick={() => this.props.deleteDeck(this.props.deck.id)

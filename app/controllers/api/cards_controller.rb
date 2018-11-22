@@ -5,6 +5,28 @@ class Api::CardsController < ApplicationController
         @cards = Card.where(deck_id:params[:deck_id])
     end 
 
+    def save 
+        debugger
+        @cards = params.values.each do |card| 
+            if card.id
+                card = current_user.cards.find(params[:id])
+                if card.update(card_params)
+                    render :show 
+                else 
+                    render json: cards.errors.full_messages
+                end
+            else 
+                card = Card.new(card_params)
+                card.deck_id = params[:deck_id]
+                if card.save
+                    render :show 
+                else  
+                    render json: @card.errors.full_messages, status: 422
+                end 
+            end
+        end 
+    end 
+
     def create
         @card = Card.new(card_params)
         @card.deck_id = params[:deck_id]
@@ -29,7 +51,7 @@ class Api::CardsController < ApplicationController
     end
 
     def update
-        @card = current_user.cards.find(params[:id])
+        @card = Card.find(params[:id])
         if @card
             if @card.update(card_params)
                 render :show 
@@ -37,12 +59,10 @@ class Api::CardsController < ApplicationController
                 render json: @cards.errors.full_messages
             end
         end 
-    else 
-        render json: ["cannot edit unowned cards"], status: 401  
     end
      
     def destroy
-        @card = current_user.find(params[:id])
+        @card = Card.find(params[:id])
         if @card 
             @card.destroy 
             render :show 
@@ -52,6 +72,6 @@ class Api::CardsController < ApplicationController
     end
 
     def card_params
-        card_params.require(:card).permit(:front, :back)
+        params.require(:card).permit(:front, :back)
     end   
 end 

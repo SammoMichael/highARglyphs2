@@ -5,6 +5,14 @@ export const fetchCards = (deckId) => {
     });
 };
 
+export const saveCards = cards => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/cards/save',
+        data: { cards: [cards] },
+    });
+};
+
 export const fetchCard = cardId => {
     return $.ajax({
         method: 'GET',
@@ -15,7 +23,7 @@ export const fetchCard = cardId => {
 export const createCard = card => {
     return $.ajax({
         method: 'POST',
-        url: `api/decks/${card.deck}/cards`,
+        url: `api/decks/${card.deckId}/cards`,
         data: { card },
     });
 };
@@ -24,6 +32,7 @@ export const updateCard = card => {
     return $.ajax({
         method: 'PATCH',
         url: `api/cards/${card.id}`,
+        data: { card }
     });
 };
 

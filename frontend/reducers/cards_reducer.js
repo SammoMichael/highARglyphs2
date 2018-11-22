@@ -11,7 +11,7 @@ const cardsReducer = (state = {}, action) => {
             return merge({}, { [action.card.id]: action.card });
         case REMOVE_CARD:
             newState = merge({}, state);
-            delete newState(action.cardId);
+            delete newState[action.cardId];
             return newState;    
         default:
             return state;

@@ -20,7 +20,8 @@ export const createCard = card => dispatch => {
 };
 
 export const updateCard = card => dispatch => {
-    return cardAPIUtil.updateCard(card.id)
+    debugger
+    return cardAPIUtil.updateCard(card)
     .then(card => dispatch({ type: RECEIVE_CARD, card }));
 };
 
@@ -29,3 +30,16 @@ export const deleteCard = cardId => dispatch => {
     .then(cardId => dispatch({ type: REMOVE_CARD, cardId }));
 };
 
+export const saveCards = cards => dispatch => {
+    cards.forEach(card => {
+        if (card.id) {
+            updateCard(card)(dispatch);
+        } else {
+            createCard(card)(dispatch);
+        }
+    })
+
+
+    // return cardAPIUtil.saveCards(cards)
+    // .then(cards => dispatch({ type: RECEIVE_CARDS, cards }));
+};

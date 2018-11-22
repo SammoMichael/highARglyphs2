@@ -5,7 +5,7 @@ class CardIndexItem extends React.Component {
         super(props);
         this.state = { front: [this.props.front] || '',
         back: [this.props.back] || '' };
-        // this.handleClickDelete = this.handleClickDelete.bind(this);
+        this.handleClickDelete = this.handleClickDelete.bind(this);
     }
 
     handleClickDelete() {
@@ -18,7 +18,7 @@ class CardIndexItem extends React.Component {
             <li>
                 <textarea defaultValue={this.props.front}></textarea>
             <textarea defaultValue={this.props.back}></textarea>
-                    <button onClick={this.handleClickDelete}>X</button>
+                    <button onClick={() => this.props.deletePost(this.props.cardId)}>X</button>
             
             </li></>
         );

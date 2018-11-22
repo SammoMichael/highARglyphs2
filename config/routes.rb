@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
     resources :cards, only: [ :show, :update, :destroy ]
   end
+    post "api/cards/save", to: 'api/cards#save'
+     resources :cards, only: [:save]
 end 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

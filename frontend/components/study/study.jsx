@@ -17,7 +17,6 @@ class Study extends React.Component {
     }
 
     handleClickFlip() {
-        console.log(this.state.flipped);
         (this.state.flipped ?
             this.setState({ flipped: false }) :
             this.setState({ flipped: true }));
@@ -28,7 +27,6 @@ class Study extends React.Component {
         const newIdx = (this.state.currIdx + 1) % this.props.cards.length;
         this.setState({ currIdx: newIdx }); 
         this.setState({ flipped: true }); 
-        console.log(this.state.flipped)
     }
 
     render() {
