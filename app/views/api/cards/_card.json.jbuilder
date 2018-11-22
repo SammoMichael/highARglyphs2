@@ -1,1 +1,1 @@
-json.extract! card, :front, :back, :deck_id 
+json.extract! card, :front, :back, :deck_id, :id 
