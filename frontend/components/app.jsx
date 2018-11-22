@@ -23,15 +23,13 @@ import CardIndexContainer from './card/card_index_container';
       </div>
       <header>
          <nav className="header-nav">
-            <Link to='/' className='header-link'>
                <nav className='BrandingNav'>
-                  <div className="icon-logo-box">
+                <Link to="/" className="icon-logo-box"></Link> 
                      <div className='icon-logo'></div>
-                  </div>
                      <h1 className="app-name">highARglyphs</h1>
                 <GreetingContainer />
                </nav>
-            </Link>                   
+                             
          </nav>  
       </header>  
                <ProtectedRoute path="/cards/:deckId" component={CardIndexContainer} />

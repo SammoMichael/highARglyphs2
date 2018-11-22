@@ -1,6 +1,7 @@
 import React from 'react';
 import CardIndexItem from './card_index_item';
 import merge from 'lodash/merge';
+import { Link } from 'react-router-dom';
 
 class CardIndex extends React.Component {
     constructor(props) {
@@ -63,9 +64,9 @@ class CardIndex extends React.Component {
             <div>
                 <ul>{ cards }
                     <button className='new-card-button' onClick={this.handleClickNew}>+</button>
-                    <button className='save-card-button' onClick={() => {
+                    <Link to={`/decks/${this.props.match.params.deckId}`} className='save-card-button' onClick={() => {
                         this.props.saveCards(Object.values(this.state.cards))
-                    }}>Save</button>
+                    }}>Save</Link>
                 </ul>
             </div>
         );
