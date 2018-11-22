@@ -35,7 +35,6 @@ class Study extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <ul>
                 <h1>Study</h1>

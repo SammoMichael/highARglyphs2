@@ -14,6 +14,16 @@ export const fetchCard = cardId => dispatch => {
     .then(card => dispatch({ type: RECEIVE_CARD, card }));
 };
 
+export const createCard = card => dispatch => {
+    return cardAPIUtil.createCard(card)
+    .then(card => dispatch({ type: RECEIVE_CARD, card }));
+};
+
+export const updateCard = card => dispatch => {
+    return cardAPIUtil.updateCard(card.id)
+    .then(card => dispatch({ type: RECEIVE_CARD, card }));
+};
+
 export const deleteCard = cardId => dispatch => {
     return cardAPIUtil.deleteCard(cardId)
     .then(cardId => dispatch({ type: REMOVE_CARD, cardId }));

@@ -4,50 +4,50 @@ import CardStudyItem from '../card/card_study_item';
 class Study extends React.Component {
     constructor(props) {
         super(props);
-        this.state = null;  
-        // this.handleKeydown = this.handleKeydown.bind(this);      
+        this.state = { currIdx: 0, flipped: true };  
+        this.handleClickNext = this.handleClickNext.bind(this);
+        this.handleClickFlip = this.handleClickFlip.bind(this);
     }   
     
-    
-    componentDidMount() {
+    componentDidMount() {  
         const { fetchDeck, deckId } = this.props;
         fetchDeck(deckId);
         this.props.fetchCards(this.props.match.params.deckId);
         document.addEventListener('keydown', this.handleKeydown);
     }
 
+    handleClickFlip() {
+        console.log(this.state.flipped);
+        (this.state.flipped ?
+            this.setState({ flipped: false }) :
+            this.setState({ flipped: true }));
+    }
+
+    handleClickNext() {
+        this.setState({ numCards: this.props.cards.length })
+        const newIdx = (this.state.currIdx + 1) % this.props.cards.length;
+        this.setState({ currIdx: newIdx }); 
+        this.setState({ flipped: true }); 
+        console.log(this.state.flipped)
+    }
+
     render() {
-        const cards = Object.values(this.props.cards.map((card, idx) => (
-        <CardStudyItem 
-            className="card-study-item"
-            key={idx}
-            front={card.front}
-            back={card.back}
-            deckId={card.deckId} />
-        )));
+        const card = Object.values(this.props.cards)[this.state.currIdx] || {};        
         return (
-            <ul>
+                <>
                 <h1>Study</h1>
-               {cards}
-            </ul>
+                <span className='flashcard-box' onClick={this.handleClickFlip}>
+            <CardStudyItem
+                className="card-study-item"
+                flipped={this.state.flipped}
+                front={card.front}
+                back={card.back}
+                deckId={card.deckId} />
+                </span>
+                <button className='next-button' onClick={this.handleClickNext}>Next</button>
+               </>
         );
     }
 }
-// handleKeydown (e) {
-//     const {deck} = this.props;
-//     if (e.keycode === 37) {
-//         toggle(cardFace)
-//     }
-//     if (e.keycode === 39) {
-//         toggle(cardFace)
-//     }
-//     if (e.keycode === 38) {
-//         this.props.history.push(`/study/${cardId - 1}`)
-//     }
-//     if (e.keycode === 40) {
-//         this.props.history.push(`/study/${cardId + 1}`)
-//     }
-// }
 
 export default Study; 
-

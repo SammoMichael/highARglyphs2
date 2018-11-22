@@ -1,7 +1,17 @@
 .flashcard {
     width: 100px;
     height: 100px;
-    background-color: blue;
+    background-color:white;
+    border-color: black;
+    border: 2px;
+    border-style: double;
         position: absolute;
     right: 500px;
+}
+
+.next-button {
+    position: relative;
+    left: 100px;
+    width: 200px;
+    height: 200px;
 }
