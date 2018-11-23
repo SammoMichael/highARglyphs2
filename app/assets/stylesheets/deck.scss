@@ -18,6 +18,7 @@
 .deck-title {
     position: absolute;
     left: 100px;
+    font-family: 'Montserrat', sans-serif;
 
 }
 .deck-box {
@@ -71,6 +72,9 @@ background-color: #29a5dc;
     position: absolute;
     border-radius: 2px;
     padding: 10px 20px;
+    text-decoration: none;
+    width: 130px;
+    height: 20px;
 }
 .index-title {
     padding: 10px;
@@ -90,6 +94,10 @@ background-color: #29a5dc;
     border-radius: 2px;
     padding: 10px 20px;
     top: 50px;
+    text-decoration: none;
+    width: 130px;
+    height: 20px;
+
 }
 .create-button {
     background-color: #29a5dc;
@@ -118,6 +126,8 @@ background-color: #29a5dc;
     border-radius: 2px;
     padding: 10px 20px;
     top: 100px;
+    width: 170.5px;
+    height: 40px;
 }
 
 .deck-controls {
@@ -134,19 +144,27 @@ background-color: #29a5dc;
 .create-deck-header {
     position: absolute;
     font-size: 25px;
+    left: 10%;
+    position: absolute;
+    font-size: 20px;
+    top: 10%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .deck-create-box {
     content: "Create Deck";
     background-color: white;
     height: -webkit-fill-available;
-    width: 180px;
+    width: 250px;
     height: -webkit-fill-available;
 }
 
 .create-input-title {
-    width: -webkit-fill-available;
-    padding: 5px;
+    bottom: -30px;
+    width: 200px;
+    padding: 8px;
+    position: relative;
+    left: 15px;
 }
 
 .deck-thumb {
@@ -160,5 +178,7 @@ background-color: #29a5dc;
     color: white;
 }
 .close-x::before {
+    position: relative;
+    // left: 50%;
     content: image-url('bsc-blue-x-icon.png');
 }

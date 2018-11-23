@@ -25,9 +25,14 @@ export const deleteDeck = deckId => dispatch => {
     .then(deck => dispatch({ type: REMOVE_DECK, deckId }));
 };
 
-const receiveDeck = ({ deck }) => {
+export const receiveDeck = ({ deck }) => {
     return ({
         type: RECEIVE_DECK,
         deck,
     });
+};
+
+export const searchDecks = (str) => dispatch => {
+    return DeckAPIUtil.searchDecks(str)
+    .then(decks => console.log(decks));
 };

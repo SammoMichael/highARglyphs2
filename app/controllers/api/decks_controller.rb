@@ -1,6 +1,11 @@
 class Api::DecksController < ApplicationController
 #   before_action :require_login
 
+  def search 
+    @decks = Deck.all.select { |deck| deck.title.downcase.match(/#{params[:str]}/)}
+    render :index 
+  end  
+
   def create
     @deck = Deck.new(deck_params)
     @deck.creator_id = current_user.id

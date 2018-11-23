@@ -24,3 +24,11 @@ export const deleteDeck = (deckId) => {
       url: `/api/decks/${deckId}`,
     });
 };
+
+export const searchDecks = (str) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/search',
+    data: { str }
+  });
+};

@@ -2,16 +2,108 @@
     width: 100px;
     height: 100px;
     background-color:white;
-    border-color: black;
-    border: 2px;
     border-style: double;
         position: absolute;
     right: 500px;
+
+    overflow-y: auto;
+    z-index: 2;
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+
+    position: relative;
+    border-radius: 2px;
+    background: #fff;
+    padding: 30px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    box-shadow: 0 2px 4px rgba(0,0,0,.25);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    width: 50%;
+    height: 70vh;
+    padding: 0 64px;
+    font-size: 24px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
 }
 
+
 .next-button {
+        -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
     position: relative;
-    left: 100px;
-    width: 200px;
-    height: 200px;
+    overflow: hidden;
+    width: 25vw;
+    height: 80vh;
+    background: #333;
+    -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    box-shadow: 0 4px 4px rgba(0,0,0,.25);
+    color: #fff;
+    left: 5%;
+
+}
+
+.flipper-button {
+    background-color: #dadbdb;
+    color: #36b6da;
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    border: 0;
+    height: 6vh;
+    font-size: 24px;
+    color: #fff;
+    -webkit-box-shadow: 0 3px 4px rgba(0,0,0,.25);
+    box-shadow: 0 3px 4px rgba(0,0,0,.25);
+    background: #29a5dc;
+    position: relative;
+    font-family: Proxima Nova Light,sans-serif;
+    width: 59%;
+    left: 35%;
+    top: 650px;
+}
+
+.next {
+font-size: 40px;
+}
+
+.card-count {
+font-size: 20px;
+}
+
+.front-textarea {
+font-family: 'Montserrat', sans-serif;
+    height: 50px;
+    width: 600px;
+    font-size: 16px;
+    overflow-y: auto;
+
+}
+
+.back-textarea {
+    font-size: 16px;
+    overflow-y: auto;
+    font-family: 'Montserrat', sans-serif;
+        height: 50px;
+    width: 600px;
 }

@@ -20,7 +20,6 @@ export const createCard = card => dispatch => {
 };
 
 export const updateCard = card => dispatch => {
-    debugger
     return cardAPIUtil.updateCard(card)
     .then(card => dispatch({ type: RECEIVE_CARD, card }));
 };

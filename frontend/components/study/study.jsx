@@ -23,9 +23,13 @@ class Study extends React.Component {
     }
 
     handleClickNext() {
+        // debugger
+        console.log(this.state.currIdx)
         this.setState({ numCards: this.props.cards.length })
+        console.log(this.state.numCards)
         const newIdx = (this.state.currIdx + 1) % this.props.cards.length;
         this.setState({ currIdx: newIdx }); 
+        console.log(this.state.currIdx)
         this.setState({ flipped: true }); 
     }
 
@@ -33,7 +37,7 @@ class Study extends React.Component {
         const card = Object.values(this.props.cards)[this.state.currIdx] || {};        
         return (
                 <>
-                <h1>Study</h1>
+                <h1></h1>
                 <span className='flashcard-box' onClick={this.handleClickFlip}>
             <CardStudyItem
                 className="card-study-item"
@@ -42,7 +46,14 @@ class Study extends React.Component {
                 back={card.back}
                 deckId={card.deckId} />
                 </span>
-                <button className='next-button' onClick={this.handleClickNext}>Next</button>
+                <button className='flipper-button' onClick={this.handleClickFlip}>Flip Me</button>
+                <button className='next-button' onClick={this.handleClickNext}>
+                    <span className="next">Next</span>
+                <br></br>
+                    <span className="card-count"> {this.state.currIdx + 1} of {this.state.numCards} 
+                    
+                    </span>
+                </button>
                </>
         );
     }

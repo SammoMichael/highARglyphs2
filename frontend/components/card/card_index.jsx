@@ -28,8 +28,10 @@ class CardIndex extends React.Component {
 
     handleClickDelete(card, idx) {
         const state = merge({}, this.state);
-        delete state.cards[idx];
-        this.props.deleteCard(card.id);
+        state.cards.splice(idx, 1);
+        if (card.id) {
+            this.props.deleteCard(card.id);
+        }
         this.setState(state);
     }
 
@@ -42,21 +44,21 @@ class CardIndex extends React.Component {
     }
 
     render() {
-        window.state = this.state;
         const cards = Object.values(this.state.cards.map((card, idx) => (
         <span
             id={idx + 1}
-            key={idx}
-            cardid={card.id}
-            deckid={card.deck_id}> 
+            key={idx}>
             <h3>{idx + 1}</h3>
             <textarea 
+            className='front-textarea'
             onChange={this.update('front', idx)}
             defaultValue={card.front || ''}></textarea>
-            <textarea 
+            <textarea
+            className='back-textarea' 
             onChange={this.update('back', idx)}
             defaultValue={card.back || ''}></textarea>
-            <button onClick={() => this.handleClickDelete(card, idx)}>X</button>
+            <button  className='delete-button2'
+            onClick={() => this.handleClickDelete(card, idx)}>X</button>
             
        </span>)
         ));

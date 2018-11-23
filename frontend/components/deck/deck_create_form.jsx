@@ -26,7 +26,6 @@ class DeckCreateForm extends React.Component {
                 <h1 className='create-deck-header'>Create Deck</h1>
                 <form onSubmit={this.handleSubmit} className='deck-create-box'>
                 <br />
-                <span className='form-type-name'>{this.props.formType}</span>
                 <i onClick={this.props.closeModal} className="close-x" >X</i>
                 <div className="create-form">
                 <br />

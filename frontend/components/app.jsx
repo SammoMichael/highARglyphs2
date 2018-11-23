@@ -16,6 +16,7 @@ import DeckShowContainer from './deck/deck_show_container';
 import StudyContainer from './study/study_container';
 import CardIndexContainer from './card/card_index_container';
 
+
  const App = () => (
    <div >
       <div>
@@ -23,13 +24,14 @@ import CardIndexContainer from './card/card_index_container';
       </div>
       <header>
          <nav className="header-nav">
-               <nav className='BrandingNav'>
-                <Link to="/" className="icon-logo-box"></Link> 
-                     <div className='icon-logo'></div>
-                     <h1 className="app-name">highARglyphs</h1>
-                <GreetingContainer />
-               </nav>
-                             
+               <Link to="/" className='BrandingNav'>
+                     <span to="/" className="icon-logo">
+                     </span> 
+                         <h1 className="app-name">highARglyphs</h1>
+               </Link>
+                     <span className='greeting-span'>
+                  <GreetingContainer />
+                     </span>
          </nav>  
       </header>  
                <ProtectedRoute path="/cards/:deckId" component={CardIndexContainer} />
