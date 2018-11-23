@@ -13,7 +13,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     );
     const personalGreeting = () => (
         <>
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
+            <h2 className="header-name">Hi, {currentUser.username}</h2>
             <button className="header-button" onClick={logout}>Log Out</button></>
     );
   return currentUser ? personalGreeting() : sessionLinks();  
