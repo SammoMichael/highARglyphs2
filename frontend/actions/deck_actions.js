@@ -3,6 +3,7 @@ import * as DeckAPIUtil from '../util/deck_api_util';
 export const RECEIVE_DECKS = 'RECEIVE_DECKS';
 export const RECEIVE_DECK = 'RECEIVE_DECK';
 export const REMOVE_DECK = 'REMOVE_DECK';
+export const RECEIVE_SEARCH_DECKS = 'RECEIVE_SEARCH_DECKS';
 
 export const fetchDecks = () => dispatch => {
     return DeckAPIUtil.fetchDecks().then(
@@ -34,5 +35,5 @@ export const receiveDeck = ({ deck }) => {
 
 export const searchDecks = (str) => dispatch => {
     return DeckAPIUtil.searchDecks(str)
-    .then(decks => console.log(decks));
+    .then(decks => dispatch({ type: RECEIVE_SEARCH_DECKS, decks }));
 };
