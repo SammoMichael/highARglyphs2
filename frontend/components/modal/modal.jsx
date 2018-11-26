@@ -5,7 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
 import DeckFormContainer from '../deck/deck_form_container';
 
-function Modal({modal, closeModal }) {
+function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }

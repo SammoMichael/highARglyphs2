@@ -16,9 +16,14 @@ class DeckCreateForm extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
+        if (this.state.title === '') {
+            this.props.createDeck({title: window.transcript}).then(this.props.closeModal);
+        } else {
         this.props.createDeck(this.state).then(this.props.closeModal);
     }
+}
 
     render() {
         return (
@@ -35,6 +40,7 @@ class DeckCreateForm extends React.Component {
                      value={this.state.title}
                      onChange={this.update('title')}
                      className="create-input-title"/>
+                     <input type="submit"></input>
                 </label>
                 </div>
                 </form>
