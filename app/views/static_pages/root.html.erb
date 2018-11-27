@@ -19,7 +19,7 @@
 <!-- Place the ar component on your scene, and the camera will use AR by default. -->
 <a-scene ar>
   <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
-<a-scene>  
+<a-scene>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -64,19 +64,21 @@
 <html>
  <%# <script> if(document.querySelector("a-marker").object3D.visible == true) </script> %>
 <head>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
 	<%# <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> %>
-<%# <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-<script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script> %>
+<script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
 </head>
-<%# <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='trackingMethod: best;'>
+<body style='margin : 0px; overflow: hidden;'>
+    <%# <a-scene embedded arjs='trackingMethod: best;'>
       <a-gltf-model src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf"></a-gltf-model>
       <a-marker-camera preset='hiro'></a-marker-camera>
       <a-camera-static/>
-    </a-scene>
-</body> %>
+    </a-scene> %>
+</body>
 </html>
 <%# <body style="margin : 0px; overflow: hidden;">
 	<a-scene arjs="debugUIEnabled: false;" embedded arjs="sourceType: webcam;">
@@ -94,7 +96,7 @@
 </a-box> %>
 		<%# </a-marker-camera>
 	</a-scene>
-</body> %> 
+</body> %>
 
 
 <%# <textarea class="transcript" value="" id="textarea" rows=10 cols=80></textarea>
@@ -113,7 +115,6 @@ recognition.onresult = function (event) {
     if (event.results[i].isFinal) {
       textarea.value += event.results[i][0].transcript;
       const transcript = event.results[i][0].transcript;
-      console.log(transcript);
       window.transcript = transcript;
       window.textarea.value = textarea.value;
     }
@@ -141,9 +142,15 @@ function toggleStartStop() {
   window.favicon = "<%= image_url('') %>
   <%# window.favicon = "<%= image_url('') %>
   <%# window.thumb = "<%= image_url('thumb.png') %>
-<%# </script> %> 
+<%# </script> %>
 
-<textarea id="textarea" rows=10 cols=80></textarea>
+<%# <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/events.js"></script>
+ %>
+
+<%# <textarea id="textarea" rows=1 cols=3></textarea>
 <button id="button" onclick="toggleStartStop()"></button>
 
 <script type="text/javascript">
@@ -158,7 +165,6 @@ recognition.onresult = function (event) {
     if (event.results[i].isFinal) {
       textarea.value += event.results[i][0].transcript;
       const transcript = event.results[i][0].transcript;
-      console.log(transcript);
       window.transcript = transcript;
       window.textarea.value = textarea.value;
     }
@@ -180,7 +186,7 @@ function toggleStartStop() {
     button.innerHTML = "Click to Stop";
   }
 }
-</script>
+</script> %>
 
 <main id="root">
 
@@ -192,9 +198,8 @@ recognition.maxAlternatives = 5;
 recognition.start();
 
 recognition.onresult = function(event) {
-    console.log('You said: ', event.results[0][0].transcript);
 };
 
 </script> %>
 
-</main> 
+</main>

@@ -24,12 +24,9 @@ class Study extends React.Component {
 
     handleClickNext() {
         // debugger
-        console.log(this.state.currIdx)
         this.setState({ numCards: this.props.cards.length })
-        console.log(this.state.numCards)
         const newIdx = (this.state.currIdx + 1) % this.props.cards.length;
         this.setState({ currIdx: newIdx }); 
-        console.log(this.state.currIdx)
         this.setState({ flipped: true }); 
     }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import CardIndexItem from './card_index_item';
 import merge from 'lodash/merge';
 import { Link } from 'react-router-dom';
 

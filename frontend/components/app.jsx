@@ -16,6 +16,7 @@ import DeckShowContainer from './deck/deck_show_container';
 import StudyContainer from './study/study_container';
 import CardIndexContainer from './card/card_index_container';
 import SearchContainer from './search/search_container';
+import Ar from './ar';
 
  const App = () => (
    <div >
@@ -31,10 +32,11 @@ import SearchContainer from './search/search_container';
                </Link>
                      <span className='greeting-span'>
                   <GreetingContainer />
-                  <SearchContainer />
+                  {/* <SearchContainer /> */}
                      </span>
          </nav>  
       </header>  
+               <ProtectedRoute path="/ar" component={Ar} />
                <ProtectedRoute path="/search" component={SearchContainer} />
                <ProtectedRoute path="/cards/:deckId" component={CardIndexContainer} />
                <ProtectedRoute path="/study/:deckId" component={StudyContainer} />

@@ -12,6 +12,11 @@ class SessionForm extends React.Component {
         this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
+    componentWillUnmount ()  {
+        debugger
+        this.props.clearErrors()
+    }
+
     update(field) {
         return (e) => this.setState({
             [field]: e.currentTarget.value

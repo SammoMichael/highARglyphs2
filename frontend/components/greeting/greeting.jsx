@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { clearErrors } from '../../actions/session_actions';
 
 const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
