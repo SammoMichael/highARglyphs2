@@ -23,7 +23,6 @@ class Study extends React.Component {
     }
 
     handleClickNext() {
-        // debugger
         this.setState({ numCards: this.props.cards.length })
         const newIdx = (this.state.currIdx + 1) % this.props.cards.length;
         this.setState({ currIdx: newIdx }); 

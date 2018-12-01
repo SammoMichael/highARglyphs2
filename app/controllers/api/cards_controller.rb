@@ -6,7 +6,6 @@ class Api::CardsController < ApplicationController
     end 
 
     def save 
-        debugger
         @cards = params.values.each do |card| 
             if card.id
                 card = current_user.cards.find(params[:id])

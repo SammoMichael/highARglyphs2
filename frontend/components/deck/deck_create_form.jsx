@@ -16,7 +16,6 @@ class DeckCreateForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         if (this.state.title === '') {
             this.props.createDeck({title: window.transcript}).then(this.props.closeModal);
