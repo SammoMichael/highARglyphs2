@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DeckIndexItem from './deck_index_item';
+import SearchContainer from '../search/search_container';
 
 class DeckIndex extends React.Component {
     componentDidMount() {
@@ -19,6 +20,7 @@ class DeckIndex extends React.Component {
                 
                 return (
                     <div>  
+                    <SearchContainer />
                     <h3 className="deck-header"></h3>
             <ul className="deck-index-item">
                 { decks }

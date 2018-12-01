@@ -7,6 +7,7 @@ import {
    HashRouter
 } from 'react-router-dom';
 
+import { connect } from 'react-redux';
 import GreetingContainer from './greeting/greeting_container';
 import Splash from './splash';
 import Modal from './modal/modal';
@@ -18,7 +19,7 @@ import CardIndexContainer from './card/card_index_container';
 import SearchContainer from './search/search_container';
 import Ar from './ar';
 
- const App = () => (
+ export const App = ({ loggedIn }) => (
    <div >
       <div>
         <Modal />
@@ -31,13 +32,13 @@ import Ar from './ar';
                          <h1 className="app-name">highARglyphs</h1>
                </Link>
                      <span className='greeting-span'>
-                  <GreetingContainer />
-                  {/* <SearchContainer /> */}
+                {/* {(window.currentUser) ? <SearchContainer /> : null} */}
+                <GreetingContainer />
                      </span>
          </nav>  
       </header>  
                <ProtectedRoute path="/ar" component={Ar} />
-               <ProtectedRoute path="/search" component={SearchContainer} />
+               {/* <ProtectedRoute path="/search" component={SearchContainer} /> */}
                <ProtectedRoute path="/cards/:deckId" component={CardIndexContainer} />
                <ProtectedRoute path="/study/:deckId" component={StudyContainer} />
                <ProtectedRoute path="/decks" component={DeckIndexContainer} />
@@ -46,4 +47,10 @@ import Ar from './ar';
    </div> 
  );
 
- export default App;
+const mapStateToProps = (state) => {
+   return ({
+      loggedIn: Boolean(state.session.id),
+   });
+};
+
+ export default connect(mapStateToProps)(App);

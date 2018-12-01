@@ -15,7 +15,7 @@ class Search extends React.Component {
     
     handleSearch(e) {
         this.setState({ searchString: e.currentTarget.value });
-        if (e.currentTarget.value === '') {
+        if (e.currentTarget.value !== '') {
             this.props.searchDecks(this.state.transcript) 
         } else {
         this.props.searchDecks(e.currentTarget.value);
@@ -59,9 +59,9 @@ class Search extends React.Component {
             onChange={this.handleSubmit}
             onMouseOver={() => this.handleSubmit}
             onClick={this.handleSubmit}></input>
-            <h3>{this.state.transcript}</h3>
-        <button onClick={this.clearTranscript}>Clear</button>
-            <h1 className="search-response">{response}</h1> */}
+            <h3>{this.state.transcript}</h3> */}
+        {/* <button onClick={this.clearTranscript}>Clear</button> */}
+            {/* <h1 className="search-response">{response}</h1> */}
 
         </>
         );

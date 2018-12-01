@@ -39,7 +39,7 @@ class DeckCreateForm extends React.Component {
                      value={this.state.title}
                      onChange={this.update('title')}
                      className="create-input-title"/>
-                     <input type="submit"></input>
+                     <input className="submit-modal-button" value="Save" type="submit"></input>
                 </label>
                 </div>
                 </form>

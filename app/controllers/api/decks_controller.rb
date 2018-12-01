@@ -1,8 +1,8 @@
 class Api::DecksController < ApplicationController
-#   before_action :require_login
+  before_action :require_logged_in
 
   def search 
-    @decks = params[:str] === "" ? [] : Deck.all.select { |deck| deck.title.downcase.match(/#{params[:str]}/)}
+    @decks = params[:str] === "" ? Deck.all : Deck.all.select { |deck| deck.title.downcase.match(/#{params[:str]}/)}
     render :index 
   end  
 
