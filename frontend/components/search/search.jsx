@@ -7,6 +7,7 @@ class Search extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearTranscript = this.clearTranscript.bind(this);
+        window.searchDecks = this.props.searchDecks;
     }
 
     componentDidMount() {
@@ -36,9 +37,10 @@ class Search extends React.Component {
     }
 
     clearTranscript() {
-        this.setState({ transcript: ''});
-        window.textarea = '';
-        textarea.value = '';
+        // this.setState({ transcript: ''});
+        // window.textarea = '';
+        // textarea.value = '';
+        
     }
     
     render() {
@@ -66,6 +68,8 @@ class Search extends React.Component {
         function toggleStartStop() {
             if (recognizing) {
                 recognition.stop();
+                window.searchDecks(window.transcript.toLowerCase());
+                textarea.value = "";
                 reset();
             } else {
                 recognition.start();
@@ -81,25 +85,32 @@ class Search extends React.Component {
         let firstBestMatch = bestMatch.filter(title => title.slice(0, this.state.searchString.length).toLowerCase() === this.state.searchString.toLowerCase());
     return (
         <>
-            <textarea id="textarea"></textarea>
-        <button id="button" onClick={toggleStartStop()}></button>
+            {/* <input 
+            value={this.state.transcript}
+            onChange={() => this.handleChange}
+            id="textarea"></input> */}
+
+        
             <i className="fas fa-search search-icon"></i>
         <input
+            id="textarea"
             className="search-field"
             type="text"
             placeholder="search"
             value={this.state.searchString}
             onChange={this.handleChange}></input>
-                <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map(match => <span>{match}<br></br></span>) }</h1>
-        <input 
+                <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map((match, key) => <span key={key}>{match}<br></br></span>) }</h1>
+            <i className="fas fa-microphone-alt mic"></i>
+        <button id="button" onClick={() => toggleStartStop()}>Record/Submit</button>
+        {/* <input 
             type="text"
             value={transcript}
             onChange={this.handleSubmit}
             onMouseOver={() => this.handleSubmit}
             onClick={this.handleSubmit}></input>
             <h3>{this.state.transcript}</h3>
-        <button onClick={this.clearTranscript}>Clear</button>
-            <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map(match => <span>{match}<br></br></span>)}</h1>           
+        <button onClick={() => reset()}>Clear</button>
+            <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map(match => <span>{match}<br></br></span>)}</h1>            */}
             {/* <h1 className="search-response">{response}</h1> */}
 
         </>
