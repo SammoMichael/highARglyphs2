@@ -1,0 +1,28 @@
+.search-field {
+    height: 30px;
+    width: 250px;
+}
+
+.search-icon {
+    margin: 10px;
+}
+
+.search-result {   
+    position: relative;
+    bottom: 24px;
+    left: 16px;
+    width: 255px;
+  margin-left:20px;
+  display:flex;
+  flex-direction:column;
+  background-color: #030e21;
+  box-shadow: 5px 5px 30px 1px rgb(0, 0, 0);
+    margin: 20px;
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+.search-result-line {
+    text-decoration: none;
+    list-style-type: none;
+}

@@ -1,4 +1,5 @@
 .deck-header {
+    font-weight: bolder;
     height: 56px;
     border-right: 4px solid #e8e8e8; 
         color: #333;
@@ -14,6 +15,10 @@
     padding-top: 5px;
     margin-top: 5px;
 
+}
+.deck-index-item {
+    position: relative;
+    bottom: 40px;
 }
 .deck-title {
     position: absolute;

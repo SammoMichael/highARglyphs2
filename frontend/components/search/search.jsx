@@ -18,12 +18,12 @@ class Search extends React.Component {
         if (e.currentTarget.value !== '') {
             this.props.searchDecks(this.state.transcript) 
         } else {
-        this.props.searchDecks(e.currentTarget.value);
+        this.props.searchDecks(e.currentTarget.value.toLowerCase());
         }
     }
     handleChange(e) {
         this.setState({ searchString: e.currentTarget.value });
-        this.props.searchDecks(e.currentTarget.value);
+        this.props.searchDecks(e.currentTarget.value.toLowerCase());
     }
 
     handleSubmit(e) {
@@ -38,29 +38,68 @@ class Search extends React.Component {
     clearTranscript() {
         this.setState({ transcript: ''});
         window.textarea = '';
+        textarea.value = '';
     }
     
     render() {
+        var recognizing;
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        reset();
+        recognition.onend = reset();
+
+        recognition.onresult = function (event) {
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    textarea.value += event.results[i][0].transcript;
+                    const transcript = event.results[i][0].transcript;
+                    window.transcript = transcript;
+                    window.textarea.value = textarea.value;
+                }
+            }
+        }
+
+        function reset() {
+            recognizing = false;
+        }
+
+        function toggleStartStop() {
+            if (recognizing) {
+                recognition.stop();
+                reset();
+            } else {
+                recognition.start();
+                recognizing = true;
+            }
+        }
         const transcript = this.state.transcript;
         let response = (Object.values(this.props.decks).map(deck => {
             return (
-            <li key={deck.id}>{deck.title}</li>) 
-        }))
+                <li className="search-result-line" key={deck.id}>{deck.title}</li>) 
+            }))
+        let bestMatch = (Object.values(this.props.decks).map(deck => deck.title))
+        let firstBestMatch = bestMatch.filter(title => title.slice(0, this.state.searchString.length).toLowerCase() === this.state.searchString.toLowerCase());
     return (
         <>
-        
+            <textarea id="textarea"></textarea>
+        <button id="button" onClick={toggleStartStop()}></button>
+            <i className="fas fa-search search-icon"></i>
         <input
+            className="search-field"
             type="text"
+            placeholder="search"
             value={this.state.searchString}
             onChange={this.handleChange}></input>
-        {/* <input 
+                <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map(match => <span>{match}<br></br></span>) }</h1>
+        <input 
             type="text"
             value={transcript}
             onChange={this.handleSubmit}
             onMouseOver={() => this.handleSubmit}
             onClick={this.handleSubmit}></input>
-            <h3>{this.state.transcript}</h3> */}
-        {/* <button onClick={this.clearTranscript}>Clear</button> */}
+            <h3>{this.state.transcript}</h3>
+        <button onClick={this.clearTranscript}>Clear</button>
+            <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map(match => <span>{match}<br></br></span>)}</h1>           
             {/* <h1 className="search-response">{response}</h1> */}
 
         </>
@@ -68,4 +107,3 @@ class Search extends React.Component {
     }
 }
 export default Search;
-

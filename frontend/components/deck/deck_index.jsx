@@ -21,7 +21,7 @@ class DeckIndex extends React.Component {
                 return (
                     <div>  
                     <SearchContainer />
-                    <h3 className="deck-header"></h3>
+                    <h3 className="deck-header">Decks</h3>
             <ul className="deck-index-item">
                 { decks }
             </ul>
