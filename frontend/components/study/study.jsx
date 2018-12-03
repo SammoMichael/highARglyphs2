@@ -3,13 +3,16 @@ import CardStudyItem from '../card/card_study_item';
 
 class Study extends React.Component {
     constructor(props) {
+        debugger
         super(props);
-        this.state = { currIdx: 0, flipped: true };  
+        this.state = { currIdx: 0, flipped: true, numCards: this.props.numCards };  
         this.handleClickNext = this.handleClickNext.bind(this);
         this.handleClickFlip = this.handleClickFlip.bind(this);
     }   
     
     componentDidMount() {  
+        debugger
+        this.setState({ numCards: this.props.cards.length })
         const { fetchDeck, deckId } = this.props;
         fetchDeck(deckId);
         this.props.fetchCards(this.props.match.params.deckId);
@@ -30,6 +33,7 @@ class Study extends React.Component {
     }
 
     render() {
+        debugger
         const card = Object.values(this.props.cards)[this.state.currIdx] || {};        
         return (
                 <>
@@ -46,7 +50,7 @@ class Study extends React.Component {
                 <button className='next-button' onClick={this.handleClickNext}>
                     <span className="next">Next</span>
                 <br></br>
-                    <span className="card-count"> {this.state.currIdx + 1} of {this.state.numCards} 
+                    <span className="card-count"> {this.state.currIdx + 1} of {this.props.numCards} 
                     
                     </span>
                 </button>

@@ -7,10 +7,12 @@ const mapStateToProps = (state, ownProps) => {
     const deckId = ownProps.match.params.deckId;
     const deck = state.entities.decks[deckId];
     const cards = Object.values(state.entities.cards);
+    const numCards = cards.length;
     return {
         deckId,
         deck,
         cards,
+        numCards,
     };
 };
 
