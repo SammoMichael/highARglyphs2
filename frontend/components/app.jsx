@@ -18,6 +18,7 @@ import StudyContainer from './study/study_container';
 import CardIndexContainer from './card/card_index_container';
 import SearchContainer from './search/search_container';
 import Ar from './ar';
+import Speech from './speech/speech';
 
  export const App = ({ loggedIn }) => (
    <div >
@@ -38,7 +39,7 @@ import Ar from './ar';
          </nav>  
       </header>  
                <ProtectedRoute path="/ar" component={Ar} />
-               {/* <ProtectedRoute path="/search" component={SearchContainer} /> */}
+               <ProtectedRoute path="/speech" component={Speech} />
                <ProtectedRoute path="/cards/:deckId" component={CardIndexContainer} />
                <ProtectedRoute path="/study/:deckId" component={StudyContainer} />
                <ProtectedRoute path="/decks" component={DeckIndexContainer} />

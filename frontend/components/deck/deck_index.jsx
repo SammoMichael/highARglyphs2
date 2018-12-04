@@ -27,7 +27,6 @@ class DeckIndex extends React.Component {
                     
                     <div>  
                     <SearchContainer />
-                        {/* <img alt="deck-thumb" src="./placeholder.png" /> */}
                     <h3 className="deck-header">Decks</h3>
                         <button className="create-button create-button2"
                             onClick={() => this.props.openModal('create')}>
