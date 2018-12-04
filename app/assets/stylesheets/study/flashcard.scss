@@ -47,12 +47,16 @@
     font-family: 'Montserrat', sans-serif;
     color: #ff8a47;
     font-size: 30px;
-    margin-top: 20px;
     margin-bottom: 10px;
-    left: 150px;
+    left: 100px;
     position: relative;
+    padding: 20px;
 }
 
+.hashtag-span {
+    position: relative;
+    left: 3.5%;
+}
 .next-button {
         -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -107,6 +111,8 @@ font-size: 20px;
     overflow-y: auto;
     padding: 10px;
     width: 450px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 .card-num {
@@ -114,6 +120,10 @@ font-size: 20px;
 }
 .card-num-span {
     display: flex;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
 }
 
 .directions-span {
@@ -149,6 +159,8 @@ color: #29a5dc;
     height: 43px;
     padding: 10px;
     width: 450px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 .right-side-buttons {
     display: -webkit-inline-box;
@@ -161,7 +173,19 @@ color: #29a5dc;
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
-    right: 10%;
+    right: 15%;
+}
+
+.cell {
+    padding: 20px;
+}
+.answers-span {
+    position: relative;
+    right: 5.5%;
+}
+.questions-span {
+    position: relative;
+    right: 15%;
 }
 
 .card-list-ul {

@@ -70,6 +70,7 @@ class CardIndex extends React.Component {
             className='front-textarea'
             onChange={this.update('front', idx)}
             defaultValue={card.front || ''}></textarea>
+            <span className="cell"></span>
             <textarea
             className='back-textarea' 
             onChange={this.update('back', idx)}
@@ -85,8 +86,8 @@ class CardIndex extends React.Component {
             <h2 className="flashcard-in-title"> Flashcards in "{(this.props.deck ? this.props.deck.title : "")}"</h2>
                <div className="table-headers">
                     <span className='hashtag-span'>#</span>
-                    <span className="questions-span">Questions</span>
-                    <span className="answers-span">Answers</span>
+                    <span className="questions-span">Question</span>
+                    <span className="answers-span">Answer</span>
                </div>
                 <ul className="card-list-ul">{ cards }
                 <span className="directions-span">
