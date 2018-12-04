@@ -101,7 +101,7 @@ class Search extends React.Component {
             onChange={this.handleChange}></input>
                 <h1 className="search-result" >{this.state.searchString === "" ? null : firstBestMatch.map((match, key) => <span key={key}>{match}<br></br></span>) }</h1>
             <i className="fas fa-microphone-alt mic"></i>
-        <button id="button" onClick={() => toggleStartStop()}>Record/Submit</button>
+        <button className="record-button" id="button" onClick={() => toggleStartStop()}>Record/Submit</button>
         {/* <input 
             type="text"
             value={transcript}

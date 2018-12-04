@@ -3,7 +3,6 @@ import CardStudyItem from '../card/card_study_item';
 
 class Study extends React.Component {
     constructor(props) {
-        debugger
         super(props);
         this.state = { currIdx: 0, flipped: true, numCards: this.props.numCards };  
         this.handleClickNext = this.handleClickNext.bind(this);
@@ -11,7 +10,6 @@ class Study extends React.Component {
     }   
     
     componentDidMount() {  
-        debugger
         this.setState({ numCards: this.props.cards.length })
         const { fetchDeck, deckId } = this.props;
         fetchDeck(deckId);
@@ -33,7 +31,6 @@ class Study extends React.Component {
     }
 
     render() {
-        debugger
         const card = Object.values(this.props.cards)[this.state.currIdx] || {};        
         return (
                 <>
@@ -50,7 +47,7 @@ class Study extends React.Component {
                 <button className='next-button' onClick={this.handleClickNext}>
                     <span className="next">Next</span>
                 <br></br>
-                    <span className="card-count"> {this.state.currIdx + 1} of {this.props.numCards} 
+                    <span className="card-count"> {(this.props.numCards === 0 ? 0 : this.state.currIdx + 1) } of {this.props.numCards} 
                     
                     </span>
                 </button>

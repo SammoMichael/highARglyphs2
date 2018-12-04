@@ -17,6 +17,7 @@ class DeckShow extends React.Component {
         return (
             <section className="deck-detail">
                 <ul className='deck-detail-box'>
+                    <span className="placeholder-img"></span>
                     <li className="deck-title">{deck.title}</li>
                     <div className="deck-controls">
                         <Link to={`/study/${deck.id}`} className='study-button'>Study</Link>

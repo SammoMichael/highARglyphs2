@@ -9,6 +9,11 @@ class DeckIndex extends React.Component {
     }
 
     render() {
+        <button className="create-button"
+            onClick={() => this.props.openModal('create')}>
+            Create Deck
+                </button>
+
         const decks = this.props.decks.map((deck) => (
             <Link className="deck-links" 
             to={`/decks/${deck.id}`} 
@@ -19,9 +24,15 @@ class DeckIndex extends React.Component {
                 ));
                 
                 return (
+                    
                     <div>  
                     <SearchContainer />
+                        {/* <img alt="deck-thumb" src="./placeholder.png" /> */}
                     <h3 className="deck-header">Decks</h3>
+                        <button className="create-button create-button2"
+                            onClick={() => this.props.openModal('create')}>
+                            Create Deck
+                </button>
             <ul className="deck-index-item">
                 { decks }
             </ul>

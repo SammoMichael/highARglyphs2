@@ -20,11 +20,24 @@
     position: relative;
     bottom: 40px;
 }
+
+
+.record-button {
+
+    background-color: #29a5dc;
+    color: white;
+    font-family: Proxima Nova Light,sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
 .deck-title {
-    position: absolute;
+        inline-size: max-content;
+   font-size: 35px;
+    padding: 10px;
+    position: relative;
     left: 100px;
     font-family: 'Montserrat', sans-serif;
-
+    bottom: 115px;
 }
 .deck-box {
     display: flex;
@@ -80,6 +93,7 @@ background-color: #29a5dc;
     text-decoration: none;
     width: 130px;
     height: 20px;
+    top: 150px;
 }
 .index-title {
     padding: 10px;
@@ -113,7 +127,8 @@ background-color: #29a5dc;
     border-radius: 2px;
     text-align: center;
     transition: all .3s;
-    position: absolute;
+    position: relative;
+    bottom: 40px;
     border-radius: 2px;
     padding: 10px 20px;
 }
@@ -141,8 +156,6 @@ background-color: #29a5dc;
     height: 300px;
     display: flex;
     flex-direction: row-reverse;
-    position: relative;
-    top: 30%;
     right: 30%;
 }
 
@@ -178,7 +191,12 @@ background-color: #29a5dc;
     background-image: image-url('thumb.png');
     content: image-url('thumb.png');
 }
-
+.placeholder-img {
+    height: 100px;
+    width: 100px;
+    background-image: image-url('placeholder.png');
+    content: image-url('placeholder.png');
+}
 .close-x {
     color: white;
 }
