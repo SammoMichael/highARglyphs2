@@ -6,8 +6,6 @@ class Speech extends React.Component {
         this.state = { searchString: '', transcript: window.transcript };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearTranscript = this.clearTranscript.bind(this);
-        // window.searchDecks = this.props.searchDecks;
     }
 
     handleSearch(e) {
@@ -28,14 +26,14 @@ class Speech extends React.Component {
     }
 
     render() {
-        var recognizing;
-        var recognition = new webkitSpeechRecognition();
+        let recognizing;
+        let recognition = new webkitSpeechRecognition() || new SpeechRecognition();
         recognition.continuous = true;
         reset();
         recognition.onend = reset();
 
         recognition.onresult = function (event) {
-            for (var i = event.resultIndex; i < event.results.length; ++i) {
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
                     textarea.value += event.results[i][0].transcript;
                     const transcript = event.results[i][0].transcript;
@@ -52,6 +50,7 @@ class Speech extends React.Component {
         function toggleStartStop() {
             if (recognizing) {
                 recognition.stop();
+                // window.saveCards(window.cards) || window.createDeck(window.deck);
                 // window.searchDecks(window.transcript.toLowerCase());
                 textarea.value = "";
                 reset();
@@ -63,7 +62,7 @@ class Speech extends React.Component {
         const transcript = this.state.transcript;
         
         return (
-            <>
+            <div>
                 <i className="fas fa-search search-icon"></i>
                 <input
                     id="textarea"
@@ -75,7 +74,7 @@ class Speech extends React.Component {
                 <i className="fas fa-microphone-alt mic"></i>
                 <button className="record-button" id="button" onClick={() => toggleStartStop()}>Record/Submit</button>
 
-            </>
+            </div>
         );
     }
 }

@@ -93,7 +93,7 @@
     font-family: Proxima Nova Light,sans-serif;
     width: 59%;
     left: 35%;
-    top: 720px;
+    top: 650px;
 }
 
 .next {
@@ -140,6 +140,9 @@ font-size: 20px;
 .fa-plus-circle:hover {
     cursor: pointer;
 }
+.fas.fa-times-circle fa-2x {
+    margin-top: 15px;
+}
 .fa-plus-circle {
 color: #29a5dc;
     text-decoration: none;
@@ -147,10 +150,12 @@ color: #29a5dc;
 .fa-times-circle:before {
     padding: 10px;
     color: #c9302c;
-
+    margin-top: 15px;
 }
-.fas fa-times-circle {
+.fa-times-circle {
     color: #c9302c;
+    margin-top: 15px;
+
 }
 .back-textarea {
     font-size: 16px;
@@ -166,6 +171,7 @@ color: #29a5dc;
     display: -webkit-inline-box;
     position: relative;
     left: 550px;
+    margin-bottom: 20px;
 }
 
 .table-headers {

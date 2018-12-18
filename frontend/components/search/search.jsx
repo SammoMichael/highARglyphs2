@@ -45,7 +45,8 @@ class Search extends React.Component {
     
     render() {
         var recognizing;
-        var recognition = new webkitSpeechRecognition();
+        var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        // var recognition = new webkitSpeechRecognition() || SpeechRecognition();
         recognition.continuous = true;
         reset();
         recognition.onend = reset();
