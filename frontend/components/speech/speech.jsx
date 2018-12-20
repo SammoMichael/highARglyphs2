@@ -41,7 +41,7 @@ class Speech extends React.Component {
                     window.textarea.value = textarea.value;
                 }
             }
-        }
+        };
 
         function reset() {
             recognizing = false;

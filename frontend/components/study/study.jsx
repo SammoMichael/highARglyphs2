@@ -7,10 +7,12 @@ class Study extends React.Component {
         this.state = { currIdx: 0, flipped: true, numCards: this.props.numCards };  
         this.handleClickNext = this.handleClickNext.bind(this);
         this.handleClickFlip = this.handleClickFlip.bind(this);
+        this.video = document.getElementById('scene');
+        window.video = this.video;
     }   
     
     componentDidMount() {  
-        this.setState({ numCards: this.props.cards.length })
+        this.setState({ numCards: this.props.cards.length });
         const { fetchDeck, deckId } = this.props;
         fetchDeck(deckId);
         this.props.fetchCards(this.props.match.params.deckId);
