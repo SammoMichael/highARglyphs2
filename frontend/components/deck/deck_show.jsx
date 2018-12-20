@@ -20,6 +20,7 @@ class DeckShow extends React.Component {
                     <span className="placeholder-img"></span>
                     <li className="deck-title">{deck.title}</li>
                     <div className="deck-controls">
+                        <Link to={`/ar/${deck.id}`} className='ar-study-button'>AR Study</Link>
                         <Link to={`/study/${deck.id}`} className='study-button'>Study</Link>
                         <Link to={`/cards/${deck.id}`} className='edit-button'>Edit Cards</Link>
                         <button 

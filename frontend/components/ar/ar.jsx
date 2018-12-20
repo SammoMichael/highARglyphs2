@@ -10,6 +10,7 @@ class Ar extends React.Component {
         this.state = { currIdx: 0, flipped: true, numCards: this.props.numCards };
         this.handleClickNext = this.handleClickNext.bind(this);
         this.handleClickFlip = this.handleClickFlip.bind(this);
+        this.endSession = this.endSession.bind(this);
         this.video = document.getElementById('scene');
         window.video = this.video;
     } 
@@ -36,6 +37,10 @@ class Ar extends React.Component {
         this.setState({ flipped: true });
     }
 
+    endSession() {
+        setTimeout(location.reload(), 1000);
+        location.assign('https://higharglyphs.herokuapp.com/#/');
+    }
 
     render() {
         const card = Object.values(this.props.cards)[this.state.currIdx] || {}; 
@@ -45,7 +50,7 @@ class Ar extends React.Component {
         // console.log(window.transcript);
         return (
 
-            <div>ar = 
+            <div>
                 <div id="ascene" className="myBtn">
             <Speech  / >
                 {/* <Back /> */}
@@ -55,15 +60,15 @@ class Ar extends React.Component {
                     <button onClick={this.handleClickFlip} id="myBtn">
                 See Answer
 	        </button>
-                    <button onClick={() => location.assign('https://higharglyphs.herokuapp.com/#/')} id="myBtn">
+                    <button onClick={this.endSession} id="myBtn">
                 Main Menu
 	        </button>
         </div >
-            <Scene id="scene" artoolkit={{ sourceType: 'webcam', trackingMethod: 'best' }}>
+                <Scene id="scene" artoolkit={{ debugUIEnabled: 'false', sourceType: 'webcam', trackingMethod: 'best' }}>
                     <a-marker-camera preset="hiro">
-                        <a-plane height="3" width="3" color="black">
+                        <a-plane height="3" width="8" color="black">
                     </a-plane>
-                    <a-text value={this.state.flipped ? card.back : card.front} >
+                    <a-text value={this.state.flipped ? card.front : card.back} >
 
                     </a-text>
                     {/* <Entity */}
@@ -75,7 +80,7 @@ class Ar extends React.Component {
                         {/* <Entity id="mod" gltf-model="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf" /> */}
                  {/* src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf" */}
 
-                    />
+                    
                </a-marker-camera>
                 {/* <Entity camera /> */}
             </Scene>
