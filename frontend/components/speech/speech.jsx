@@ -22,12 +22,12 @@ class Speech extends React.Component {
     }
 
     handleSubmit(e) {
-        this.setState({ transcript: window.transcript })
+        this.setState({ transcript: window.transcript });
     }
 
     render() {
         let recognizing;
-        let recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+        let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
         recognition.continuous = true;
         reset();
         recognition.onend = reset();
@@ -37,6 +37,8 @@ class Speech extends React.Component {
                 if (event.results[i].isFinal) {
                     textarea.value += event.results[i][0].transcript;
                     const transcript = event.results[i][0].transcript;
+                    if (transcript === 'next') { window.handleClickNext(); }
+                    if (transcript === 'turn') { window.handleClickFlip(); }
                     window.transcript = transcript;
                     window.textarea.value = textarea.value;
                 }
@@ -61,7 +63,7 @@ class Speech extends React.Component {
         }
         const transcript = this.state.transcript;
         
-        return (
+        return (    
             <div>
                 <i className="fas fa-search search-icon"></i>
                 <input

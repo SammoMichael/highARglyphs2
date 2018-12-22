@@ -15,7 +15,7 @@
 
 /node_modules
 /yarn-error.log
-
+src/aws-exports.js
 node_modules/
 bundle.js
 bundle.js.map
@@ -24,3 +24,12 @@ bundle.js.map
 npm-debug.log
 
 .byebug_history
+
+#awsmobilejs
+appsync-info.json
+aws-info.json
+project-info.json
+aws-exports.*
+awsmobilejs/.awsmobile/backend-build
+awsmobilejs/\#current-backend-info
+~awsmobilejs-*/
